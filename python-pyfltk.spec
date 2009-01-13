@@ -8,6 +8,7 @@ Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Source0:	%{tarname}-%{version}.tar.gz
+Patch0:		fl.patch
 License:	GPLv2
 Group:		Development/Python
 Url:		http://pyfltk.sourceforge.net/
@@ -22,6 +23,7 @@ cross-platform graphical user-interface library.
 
 %prep
 %setup -q -n %{tarname}-%{version}
+%patch0 -p0
 
 %build
 %__python setup.py build
