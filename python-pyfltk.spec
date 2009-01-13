@@ -13,7 +13,6 @@ License:	GPLv2
 Group:		Development/Python
 Url:		http://pyfltk.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	swig >= 1.3.30
 BuildRequires:	fltk-devel >= 1.1.7
 %py_requires -d
 
