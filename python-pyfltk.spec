@@ -30,8 +30,8 @@ cross-platform graphical user-interface library.
 %install
 %__rm -rf %{buildroot}
 %__python setup.py install --root=%{buildroot}
-%__mv %{buildroot}%{py_sitedir}/fltk/docs .
-%__mv %{buildroot}%{py_sitedir}/fltk/test .
+%__mv %{buildroot}%{py_platsitedir}/fltk/docs .
+%__mv %{buildroot}%{py_platsitedir}/fltk/test .
 
 %clean
 %__rm -rf %{buildroot}
@@ -39,5 +39,5 @@ cross-platform graphical user-interface library.
 %files
 %defattr(-,root,root)
 %doc CHANGES COPYING README TODO docs/ test/
-%{py_sitedir}/fltk/*
-%{py_sitedir}/*info
+%{py_platsitedir}/fltk/*
+%{py_platsitedir}/*info
