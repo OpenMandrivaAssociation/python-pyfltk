@@ -1,7 +1,7 @@
 %define tarname pyFltk
 %define name	python-pyfltk
 %define version	1.1.3
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	Python wrapper for the FLTK library
 Name:		%{name}
