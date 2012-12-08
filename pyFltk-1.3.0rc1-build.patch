@@ -1,0 +1,11 @@
+diff -up ./setup.py.orig ./setup.py
+--- ./setup.py.orig	2011-08-20 20:05:53.623154601 +0000
++++ ./setup.py	2011-08-20 20:06:48.165820445 +0000
+@@ -89,6 +89,7 @@ elif sys.platform == 'linux2':
+         g = sysconfig._config_vars
+         g['LINKCC'] = 'g++ -pthread'
+         g['LDSHARED'] = 'g++ -shared'
++        g['CFLAGS'] = '@CUSTOM_CFLAGS@'
+     sysconfig._init_posix = my_init_posix
+     
+     def_list = [('UNIX', '1')]
