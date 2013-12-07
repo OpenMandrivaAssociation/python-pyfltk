@@ -3,7 +3,7 @@
 Summary:	Python wrapper for the FLTK library
 Name:		python-pyfltk
 Version:	1.3.0
-Release:	2
+Release:	3
 License:	GPLv2
 Group:		Development/Python
 Url:		http://pyfltk.sourceforge.net/
