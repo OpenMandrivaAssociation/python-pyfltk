@@ -12,7 +12,7 @@ Patch0:		pyFltk-1.3.0rc1-build.patch
 Patch1:		pyfltk-1.3.0-linux-3.x-detection.patch
 BuildRequires:	swig
 BuildRequires:	fltk-devel >= 1.3.0
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python2)
 
 %description
 pyFLTK is a Python wrapper for the Fast Light Tool Kit
@@ -27,16 +27,16 @@ cross-platform graphical user-interface library.
 sed -i -e 's|@CUSTOM_CFLAGS@|%{optflags}|' setup.py
 
 %build
-CPPFLAGS="-DFL_INTERNALS -lGL %{ldflags}" python setup.py build
+CPPFLAGS="-DFL_INTERNALS -lGL %{ldflags}" %{__python2} setup.py build
 
 %install
-python setup.py install --root=%{buildroot}
+%{__python2} setup.py install --root=%{buildroot}
 
 rm -rf %{buildroot}%{py_platsitedir}/fltk/docs
 rm -rf %{buildroot}%{py_platsitedir}/fltk/test
 
 %files
 %doc CHANGES COPYING README TODO
-%{py_platsitedir}/fltk/*
-%{py_platsitedir}/*info
+%{py2_platsitedir}/fltk/*
+%{py2_platsitedir}/*info
 
