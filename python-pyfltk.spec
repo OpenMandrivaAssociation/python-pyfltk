@@ -28,7 +28,7 @@ cross-platform graphical user-interface library.
 
 %prep
 %setup -qn %{tarname}-%{version}
-%apply_patches
+%autopatch -p1
 
 # (wally) With P0, disable Werror_cflags temporarily to get pkg build
 %define Werror_cflags   %nil
