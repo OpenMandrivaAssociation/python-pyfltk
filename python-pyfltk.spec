@@ -1,13 +1,15 @@
+%define  _disable_lto 1
+
 %define tarname pyFltk
 
 Summary:	Python wrapper for the FLTK library
 Name:		python-pyfltk
-Version:	1.3.4.1
-Release:	2
+Version:	1.3.7
+Release:	1
 License:	GPLv2
 Group:		Development/Python
 Url:		http://pyfltk.sourceforge.net/
-Source0:	https://files.pythonhosted.org/packages/aa/3e/773bbde7bace2a403777d2a386dac3b291431101fafb5d5b83ebe0e58cc0/pyFltk-1.3.4.1_py3.tar.gz
+Source0:	https://files.pythonhosted.org/packages/aa/3e/773bbde7bace2a403777d2a386dac3b291431101fafb5d5b83ebe0e58cc0/pyFltk-%{version}.tar.gz
 BuildRequires:	swig
 BuildRequires:	fltk-devel >= 1.3.0
 BuildRequires:	pkgconfig(python)
@@ -35,7 +37,9 @@ cross-platform graphical user-interface library.
 sed -i -e 's|@CUSTOM_CFLAGS@|%{optflags}|' setup.py
 
 %build
-CPPFLAGS="-DFL_INTERNALS -lGL %{ldflags}" %{__python} setup.py build
+#export CC=gcc
+#export CXX=g++
+CPPFLAGS="-DFL_INTERNALS -lGL %{ldflags} -lpython3.9" %{__python} setup.py build
 
 %install
 %{__python} setup.py install --root=%{buildroot}
@@ -44,7 +48,7 @@ rm -rf %{buildroot}%{py_platsitedir}/fltk/docs
 rm -rf %{buildroot}%{py_platsitedir}/fltk/test
 
 %files
-%doc CHANGES COPYING README TODO
+%doc CHANGES COPYING README.md
 %{py_platsitedir}/fltk/*
 %{py_platsitedir}/*info
 
