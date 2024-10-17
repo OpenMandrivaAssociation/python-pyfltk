@@ -8,7 +8,7 @@ Version:	1.3.7
 Release:	2
 License:	GPLv2
 Group:		Development/Python
-Url:		http://pyfltk.sourceforge.net/
+Url:		https://pyfltk.sourceforge.net/
 Source0:	https://files.pythonhosted.org/packages/aa/3e/773bbde7bace2a403777d2a386dac3b291431101fafb5d5b83ebe0e58cc0/pyFltk-%{version}.tar.gz
 BuildRequires:	swig
 BuildRequires:	fltk-devel >= 1.3.0
