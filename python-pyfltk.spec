@@ -4,8 +4,8 @@
 
 Summary:	Python wrapper for the FLTK library
 Name:		python-pyfltk
-Version:	1.3.7
-Release:	3
+Version:	1.4.5.0
+Release:	1
 License:	GPLv2
 Group:		Development/Python
 Url:		https://pyfltk.sourceforge.net/
@@ -29,7 +29,7 @@ pyFLTK is a Python wrapper for the Fast Light Tool Kit
 cross-platform graphical user-interface library.
 
 %prep
-%setup -qn %{tarname}-%{version}
+%setup -qn %{tarname}-%{version} -n pyfltk-1.4.5.0
 %autopatch -p1
 
 # (wally) With P0, disable Werror_cflags temporarily to get pkg build
